@@ -251,25 +251,52 @@ s1.statisMessage()
 
 # Encapsulation: Binding the data with the methods is called Encapsulation.
 
-class Account:
-    def __init__(self, balance, account):
-        self.balance = balance
-        self.account = account
-        print("Account Created "+ str(self.account) + " with balance " + str(self.balance))
+# class Account:
+#     def __init__(self, balance, account):
+#         self.balance = balance
+#         # To private the variable we use __ before the variable name
+#         self.__account = account
+#         print("Account Created "+ str(self.account) + " with balance " + str(self.balance))
 
-    def deposit(self, amount):
-        self.balance += amount
-        print("Amount Deposited: ", amount)
-        print("Total Balance: ", self.balance)
+#     def deposit(self, amount):
+#         self.balance += amount
+#         print("Amount Deposited: ", amount)
+#         print("Total Balance: ", self.balance)
     
-    def withdraw(self, amount):
-        if amount > self.balance:
-            print("Insufficient Balance")
-        else:
-            self.balance -= amount
-            print("Amount Withdrawn: ", amount)
-            print("Total Balance: ", self.balance)   
+#     def withdraw(self, amount):
+#         if amount > self.balance:
+#             print("Insufficient Balance")
+#         else:
+#             self.balance -= amount
+#             print("Amount Withdrawn: ", amount)
+#             print("Total Balance: ", self.balance)   
 
 
-user = Account(1000, 123456)
-user.deposit(500)
+# user = Account(1000, 123456)
+# user.deposit(500)
+
+
+# inheritance: Inheritance is a mechanism in which one class acquires the property of another class.
+
+class Car:
+    @staticmethod
+    # While using static method we don't need to use self
+    def start(): 
+         print("Car is started")
+    @staticmethod
+    def stop():
+        print("Car is stopped")
+
+class Toyota(Car):
+    def __init__(self, name, brand):
+         self.name = name
+         self.brand = brand
+
+class Fortuner(Toyota):
+     def __init__(self, type):
+            self.type = type
+
+
+car1 = Fortuner("SUV")
+car1.start()
+print(car1.type)
