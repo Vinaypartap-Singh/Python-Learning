@@ -133,21 +133,71 @@ info = {
 # Recursion
 
 
-def show(n):
-    if n == 0:
-        return
-    print(n)
-    show(n-1)
-
-show(5)
+# def show(n):
+#     if n == 0:
+#         return
+#     print(n)
+#     show(n-1)
+#
+# show(5)
 
 
 # Factorial
 
-def fact (n) :
-    if(n== 0 or n==1):
-        return 1
-    return n * fact(n-1)
+# def fact (n) :
+#     if(n== 0 or n==1):
+#         return 1
+#     return n * fact(n-1)
+#
+#
+# print(fact(5))
 
 
-print(fact(5))
+
+# File IO in Python
+
+# f = open("data.txt", "r")
+# data = f.read()
+# print(data)
+# print(type(data))
+
+
+# write data in file
+
+# f = open("data.txt", "w")
+# f.write("Hello, I am Vinay. This file is written using python by Vinay")
+# f.close()
+
+
+# Delete file in Python
+
+# import os
+# os.remove("data.txt")
+
+
+# OOPS in python
+
+# class Student:
+#     # Contructor in Python
+#     # Self is a reference of the new object like s1 = Student() so self is the reference of s1
+#     # Self is like this in javascript
+#
+#     # Default Constructor
+#     #  def __init__(self):
+#     #     pass
+#
+#     # Parameters in constructor
+#     def __init__(self, fullName, age):
+#         self.name = fullName,
+#         self.age = age,
+#         print(self)
+#
+#
+# s1 = Student("Vinay", 18)
+# s2 = Student("Manpreet", 21)
+# print(s1.name)
+# print(s2.age)
+
+
+# Class & Instance Attributes
+
