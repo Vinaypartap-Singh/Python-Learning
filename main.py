@@ -109,17 +109,19 @@
 
 # Dictionary in Python
 
-info = {
-    "name": "Vinay",
-    "age": 21,
-    "city": "Ludhiana",
-    "skills": {"python", "java", "c++"},
-    "subjects": {
-        "1": "Maths",
-        "2": "Science",
-        "3": "English"
-    }
-}
+# info = {
+#     "name": "Vinay",
+#     "age": 21,
+#     "city": "Ludhiana",
+#     "skills": {"python", "java", "c++"},
+#     "subjects": {
+#         "1": "Maths",
+#         "2": "Science",
+#         "3": "English"
+#     }
+# }
+
+
 # TO Access the dictionary elements
 # print(info["name"])
 # info["name"] = "Manpreet"
@@ -178,6 +180,7 @@ info = {
 # OOPS in python
 
 # class Student:
+#     # college_name = "Georgian@ILAC" # Class Variable or Static Variable or Class Attribute
 #     # Contructor in Python
 #     # Self is a reference of the new object like s1 = Student() so self is the reference of s1
 #     # Self is like this in javascript
@@ -192,12 +195,81 @@ info = {
 #         self.age = age,
 #         print(self)
 #
+# #   Methods in Python
+#     def welcome(self):
+#         return print("Welcome", self.name)
+# #
 #
 # s1 = Student("Vinay", 18)
 # s2 = Student("Manpreet", 21)
-# print(s1.name)
+# print(s1.welcome())
 # print(s2.age)
+
 
 
 # Class & Instance Attributes
 
+
+
+# Classes
+
+class Student:
+    def __init__(self, name, age, mark):
+        self.name = name
+        self.age = age
+        self.mark = mark
+    @staticmethod
+    def statisMessage():
+        print("Hello Students Welcome to the Class")
+    def get_avg(self, mark):
+            return print(sum(mark)/len(mark))
+
+
+s1 = Student("Vinay", 21, [90, 80, 70, 60, 50])
+s1.get_avg(s1.mark)
+s1.statisMessage()
+
+# Inheritance, Encapsulation, Polymorphism, Abstraction
+
+# Abstraction: Hiding the internal details and showing the functionality is called Abstraction.
+
+# class Car:
+#     def __init__(self):
+#         self.acc = False
+#         self.brk = False
+#         self.clutch = False
+    
+#     def start(self):
+#         self.acc = True
+#         self.brk = False
+#         self.clutch = True
+#         print("Car is started")
+
+# car1 = Car()
+# car1.start()
+
+
+# Encapsulation: Binding the data with the methods is called Encapsulation.
+
+class Account:
+    def __init__(self, balance, account):
+        self.balance = balance
+        self.account = account
+        print("Account Created "+ str(self.account) + " with balance " + str(self.balance))
+
+    def deposit(self, amount):
+        self.balance += amount
+        print("Amount Deposited: ", amount)
+        print("Total Balance: ", self.balance)
+    
+    def withdraw(self, amount):
+        if amount > self.balance:
+            print("Insufficient Balance")
+        else:
+            self.balance -= amount
+            print("Amount Withdrawn: ", amount)
+            print("Total Balance: ", self.balance)   
+
+
+user = Account(1000, 123456)
+user.deposit(500)
